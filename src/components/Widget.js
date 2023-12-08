@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../components/widget.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import logo from "../images/logo-image.svg";
@@ -17,8 +17,35 @@ export default function Widget(props) {
     { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
   ]);
 
+  useEffect(() => {
+    const handleBodyClass = () => {
+      if (show) {
+        document.body.classList.add("modal-open-after");
+      } else {
+        document.body.classList.remove("modal-open-after");
+      }
+    };
+
+    handleBodyClass(); // Set initial class
+
+    return () => {
+      // Clean up and remove the class when the component unmounts
+      document.body.classList.remove("modal-open-after");
+    };
+  }, [show]);
+
+  const closeModal = () => {
+    // Close your modal logic goes here
+
+    // Send a message to the parent document
+    window.parent.postMessage("closeIframe", "*");
+  };
+
   // const handleClose = () => props.toggleComponent();
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    closeModal();
+    setShow(false);
+  };
 
   // const [showModal, setShowModal] = useState(true)
   // const handleShow = () => setShow(true);

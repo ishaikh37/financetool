@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "../components/cart.css";
@@ -14,11 +14,38 @@ export default function Cart() {
   const [showComponent, setShowComponent] = useState(false);
   const handleClose = () => setShow(false);
   //   const handleShow = () => setShow(true);
+
+  const closeModal = () => {
+    // Close your modal logic goes here
+
+    // Send a message to the parent document
+    window.parent.postMessage("closeIframe", "*");
+  };
+
   const toggleComponent = () => {
+    closeModal();
     console.log("yesss");
     setShowComponent(!showComponent);
     // setShow(false)
   };
+
+  useEffect(() => {
+    const handleBodyClass = () => {
+      if (show) {
+        document.body.classList.add("modal-open-after");
+      } else {
+        document.body.classList.remove("modal-open-after");
+      }
+    };
+
+    handleBodyClass(); // Set initial class
+
+    return () => {
+      // Clean up and remove the class when the component unmounts
+      document.body.classList.remove("modal-open-after");
+    };
+  }, [show]);
+
   return (
     <>
       {show ? (

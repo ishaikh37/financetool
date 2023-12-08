@@ -168,6 +168,10 @@
     top: -10px;
     color: gray;
 }
+
+.modal-open-after {
+    background: transparent;
+}
  
 /* responsive style */
 @media only screen and (max-width: 428px) {
