@@ -8,7 +8,19 @@ import "./widget.css";
 const CustomUI = () => {
   const [modal, setModal] = useState(true);
 
-  const toggle = () => setModal(!modal);
+  const closeModal = () => {
+    // Close your modal logic goes here
+
+    // Dispatch the custom event to notify the parent document
+    var event = new Event("iframeModalClosed");
+    window.parent.dispatchEvent(event);
+  };
+
+  const toggle = () => {
+    closeModal();
+    setModal(!modal);
+  };
+
   return (
     <Modal isOpen={modal} toggle={toggle}>
       <div
