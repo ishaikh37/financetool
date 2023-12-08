@@ -1,10 +1,22 @@
-// src/App.js
-import React from "react";
-import CustomUI from "./MyModal";
-// import CustomUI from './MyModal';
+import './App.css';
+import Widget from './components/Widget';
+import Cart from './components/Cart';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
-  return <CustomUI />;
+  
+  return (
+    <>
+     <Cart />
+    </>
+  
+
+    // <div className="App">
+       
+        // {/* <Widget /> */}
+    // {/* </div> */}
+  );
 }
 
 export default App;
