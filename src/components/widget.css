@@ -172,6 +172,12 @@
 .modal-open-after {
     background: transparent;
 }
+
+.widget-iframe .modal-open-after .modal .modal-dialog{
+    top: 50%;
+    margin: 0px auto;
+    transform: translateY(-50%);
+}
  
 /* responsive style */
 @media only screen and (max-width: 428px) {
