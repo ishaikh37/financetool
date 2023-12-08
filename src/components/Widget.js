@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import logo from "../images/logo-image.svg";
 import info from "../images/info-icon.svg";
 import { ReactSVG } from "react-svg";
-import expand from "../images/Icon-expand.svg";
+// import expand from "../images/Icon-expand.svg";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import "../components/Cart";
@@ -12,12 +12,37 @@ import "../components/Cart";
 export default function Widget(props) {
   console.log("props", props);
   const [show, setShow] = useState(true);
+  const [cartItems, setCartItems] = useState([
+    { id: 1, productName: "Selling Plans Ski Wax", quantity: 2, price: 100 },
+    { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
+  ]);
 
   // const handleClose = () => props.toggleComponent();
   const handleClose = () => setShow(false);
 
   // const [showModal, setShowModal] = useState(true)
   // const handleShow = () => setShow(true);
+
+  const handleQuantityChange = (index, newQuantity) => {
+    // Create a copy of the cartItems array
+    const updatedCartItems = [...cartItems];
+
+    // Update the quantity for the specific item
+    updatedCartItems[index] = {
+      ...updatedCartItems[index],
+      quantity: newQuantity,
+    };
+
+    // Update the state with the new cartItems array
+    setCartItems(updatedCartItems);
+  };
+
+  const calculateTotalPrice = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
+  };
 
   return (
     <>
@@ -35,9 +60,9 @@ export default function Widget(props) {
                 <div className="widget-box subtotal-cart">
                   <div className="accordion-item">
                     <div className="widget-content">
-                      <div className="expand-svg">
+                      {/* <div className="expand-svg">
                         <img src={expand} alt="expand-svg" />
-                      </div>
+                      </div> */}
                       {/* <i className="fa-solid fa-xmark"></i> */}
                       <div className="left-content">
                         <img src={logo} alt="logo" />
@@ -58,7 +83,40 @@ export default function Widget(props) {
                       <div className="accordion-body">
                         <h5>Your Cart</h5>
                         <div className="your-cart">
-                          <div className="product-table">
+                          {cartItems?.map((item, i) => (
+                            <div key={i} className="product-table">
+                              <div className="col-6">
+                                <p>
+                                  <i className="fa-solid fa-trash"></i>
+                                  {item.productName}
+                                </p>
+                              </div>
+                              <div className="col-3">
+                                <div className="input-group">
+                                  <input
+                                    type="number"
+                                    className="form-control text-center"
+                                    id="quantity"
+                                    min="1"
+                                    value={item.quantity}
+                                    defaultValue={1}
+                                    onChange={(e) =>
+                                      handleQuantityChange(
+                                        i,
+                                        parseInt(e.target.value, 10)
+                                      )
+                                    }
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-3 price">
+                                <span className="bold-price">
+                                  £{item.price * item.quantity}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                          {/* <div className="product-table">
                             <div className="col-6">
                               <p>
                                 <i className="fa-solid fa-trash"></i>Product
@@ -71,7 +129,8 @@ export default function Widget(props) {
                                   type="number"
                                   className="form-control text-center"
                                   id="quantity"
-                                  min="0"
+                                  min="1"
+                                  defaultValue={1}
                                 />
                               </div>
                             </div>
@@ -91,19 +150,22 @@ export default function Widget(props) {
                                 <input
                                   type="number"
                                   className="form-control text-center"
-                                  value={1}
+                                  min="1"
+                                  defaultValue={1}
                                 />
                               </div>
                             </div>
                             <div className="col-3 price">
                               <span className="bold-price">£400</span>
                             </div>
-                          </div>
+                          </div> */}
                           <div className="subtotal">
                             <div className="row">
                               <div className="col-6">Subtotal</div>
                               <div className="col-6 price">
-                                <span className="colored-text">£1,200</span>
+                                <span className="colored-text">
+                                  £{calculateTotalPrice()}
+                                </span>
                               </div>
                             </div>
                           </div>

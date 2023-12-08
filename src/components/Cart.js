@@ -7,7 +7,7 @@ import { useState } from "react";
 import logo from "../images/logo-image.svg";
 import info from "../images/info-icon.svg";
 import { ReactSVG } from "react-svg";
-import expand from "../images/Icon-expand.svg";
+// import expand from "../images/Icon-expand.svg";
 import Widget from "./Widget";
 export default function Cart() {
   const [show, setShow] = useState(true);
@@ -34,9 +34,9 @@ export default function Cart() {
                 <div className="widget-box expanded-widget">
                   <div className="accordion-item">
                     <div className="widget-content">
-                      <div className="expand-svg">
+                      {/* <div className="expand-svg">
                         <img src={expand} alt="expand-svg" />
-                      </div>
+                      </div> */}
                       {/* <i className="fa-solid fa-xmark"></i> */}
                       <div className="left-content">
                         <img src={logo} alt="logo" />
