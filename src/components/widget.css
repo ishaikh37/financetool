@@ -35,9 +35,11 @@
     background-color: #ffffff;
     padding:20px 20px;
     box-sizing: border-box;
-    margin-top: 20px;
     border-radius: 16px;
     box-shadow: 0px 1px 12px rgba(3,3,3,0.08);
+    top: 50%;
+    margin: 0px auto;
+    transform: translateY(-50%) !important;
 }
 
 .widget-container .widget-box .accordion-item #collapseOne .accordion-body h5{
