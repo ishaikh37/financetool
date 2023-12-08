@@ -1,20 +1,16 @@
-import './App.css';
-import Widget from './components/Widget';
-import Cart from './components/Cart';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "./App.css";
+import Cart from "./components/Cart";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  
   return (
     <>
-     <Cart />
+      <Cart />
     </>
-  
 
     // <div className="App">
-       
-        // {/* <Widget /> */}
+
+    // {/* <Widget /> */}
     // {/* </div> */}
   );
 }
