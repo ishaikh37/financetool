@@ -11,9 +11,8 @@ const CustomUI = () => {
   const closeModal = () => {
     // Close your modal logic goes here
 
-    // Dispatch the custom event to notify the parent document
-    var event = new Event("iframeModalClosed");
-    window.parent.dispatchEvent(event);
+    // Send a message to the parent document
+    window.parent.postMessage("closeIframe", "*");
   };
 
   const toggle = () => {
