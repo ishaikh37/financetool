@@ -4,12 +4,7 @@ import CustomUI from "./MyModal";
 // import CustomUI from './MyModal';
 
 function App() {
-  return (
-    // <Button style={{ margin: "10px" }} color="primary">
-    //   Apply to finance
-    // </Button>
-    <CustomUI />
-  );
+  return <CustomUI />;
 }
 
 export default App;
