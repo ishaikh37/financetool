@@ -41,8 +41,8 @@ export default function Widget(props) {
   };
 
   const handleClose = () => {
-    closeModal();
     props.toggleComponent();
+    closeModal();
   };
   // const handleClose = () => {
   //   closeModal();
