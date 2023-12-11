@@ -75,7 +75,7 @@ export default function Widget(props) {
 
   return (
     <>
-      {show ? (
+      {props?.showComponent ? (
         <Modal
           style={{}}
           show={props?.showComponent}
