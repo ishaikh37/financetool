@@ -11,7 +11,6 @@ import "../components/Cart";
 // import Cart from '../components/Cart';
 export default function Widget(props) {
   console.log("props", props);
-  const [show, setShow] = useState(true);
   const [cartItems, setCartItems] = useState([
     { id: 1, productName: "Selling Plans Ski Wax", quantity: 2, price: 100 },
     { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
@@ -19,7 +18,7 @@ export default function Widget(props) {
 
   useEffect(() => {
     const handleBodyClass = () => {
-      if (show) {
+      if (props?.showComponent) {
         document.body.classList.add("modal-open-after");
       } else {
         document.body.classList.remove("modal-open-after");
@@ -32,7 +31,7 @@ export default function Widget(props) {
       // Clean up and remove the class when the component unmounts
       document.body.classList.remove("modal-open-after");
     };
-  }, [show]);
+  }, [props?.showComponent]);
 
   // const closeModal = () => {
   //   // Close your modal logic goes here
@@ -44,7 +43,6 @@ export default function Widget(props) {
   const handleClose = () => {
     // closeModal();
     props.toggleComponent();
-    setShow(false);
   };
   // const handleClose = () => {
   //   closeModal();
