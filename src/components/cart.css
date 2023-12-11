@@ -201,8 +201,9 @@
     transform: translateY(-50%);
 }
 
-@media screen and (max-height: 700px) {
-    .main-cart-modal .modal-dialog{
-        margin: 50px auto;
+@media  (min-height: 700px) {
+    .main-cart-modal .main-cart-container .modal-dialog {
+        top: -50%;
+        transform: translateY(50%);
     }
 }

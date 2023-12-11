@@ -80,7 +80,7 @@ export default function Widget(props) {
           style={{}}
           show={props?.showComponent}
           onHide={handleClose}
-          className="main-cart-modal"
+          className="main-cart-modal main-widget-container"
         >
           <Modal.Header closeButton></Modal.Header>
           <Modal.Body>

@@ -53,7 +53,7 @@ export default function Cart() {
           <Modal
             show={!showComponent}
             onHide={handleClose}
-            className="main-cart-modal"
+            className="main-cart-modal main-cart-container"
           >
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>

@@ -205,3 +205,8 @@
     }
   }  
  
+  @media  (min-height: 428px) {
+    .main-cart-modal .main-widget-container .modal-dialog {
+        margin: auto 10px;
+    }
+}
