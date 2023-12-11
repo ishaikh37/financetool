@@ -5,9 +5,9 @@
     box-sizing: border-box;
     border-radius: 16px;
     box-shadow: 0px 1px 12px rgba(3,3,3,0.08);
-    top: 50%;
+    /* top: 50%;
     margin: 0 auto;
-    transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important; */
 }
 .widget-section{
     max-width: 395px;

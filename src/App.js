@@ -1,11 +1,12 @@
 import "./App.css";
-import Cart from "./components/Cart";
+// import Cart from "./components/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
     <>
-      <Cart />
+      <MainContainer />
     </>
 
     // <div className="App">
