@@ -129,7 +129,6 @@ export default function Widget(props) {
                                     id="quantity"
                                     min="1"
                                     value={item.quantity}
-                                    defaultValue={1}
                                     onChange={(e) =>
                                       handleQuantityChange(
                                         i,
@@ -203,63 +202,66 @@ export default function Widget(props) {
                         <select
                           className="form-select"
                           aria-label="Default select example"
+                          defaultValue="default"
                         >
-                          <option selected>Choose Your shopping option</option>
+                          <option value="default">
+                            Choose Your shopping option
+                          </option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
                         </select>
-                        <div class="coupon-form">
+                        <div className="coupon-form">
                           <form>
                             <input
                               type="text"
-                              class="code form-control"
+                              className="code form-control"
                               placeholder="Enter coupon code"
                             />
-                            <div class="row mb-3">
-                              <div class="col-md-6">
+                            <div className="row mb-3">
+                              <div className="col-md-6">
                                 <input
                                   type="text"
-                                  class="form-control"
+                                  className="form-control"
                                   placeholder="Name"
                                 />
                               </div>
-                              <div class="col-md-6">
+                              <div className="col-md-6">
                                 <input
                                   type="text"
-                                  class="form-control"
+                                  className="form-control"
                                   placeholder="Address"
                                 />
                               </div>
                             </div>
-                            <div class="row mb-3">
-                              <div class="col-md-6">
+                            <div className="row mb-3">
+                              <div className="col-md-6">
                                 <input
                                   type="text"
-                                  class="form-control"
+                                  className="form-control"
                                   placeholder="Town"
                                 />
                               </div>
-                              <div class="col-md-6">
+                              <div className="col-md-6">
                                 <input
                                   type="text"
-                                  class="form-control"
+                                  className="form-control"
                                   placeholder="Post code"
                                 />
                               </div>
                             </div>
                             <input
                               type="number"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Phone Number"
                             />
                             <input
                               type="email"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Email address"
                             />
 
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" className="btn btn-primary">
                               Apply Now
                             </button>
                           </form>

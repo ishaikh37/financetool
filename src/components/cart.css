@@ -1,13 +1,13 @@
-.main-cart-modal .modal-dialog{
+ .main-cart-container .modal-dialog {
     max-width: 395px;
     background-color: #ffffff;
     padding:20px 20px;
     box-sizing: border-box;
     border-radius: 16px;
     box-shadow: 0px 1px 12px rgba(3,3,3,0.08);
-    top: 50%;
+    /* top: 50%;
     margin: 0 auto;
-    transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important; */
 }
 .main-cart-modal .modal-dialog .modal-content{
     border:none;

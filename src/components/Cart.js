@@ -108,8 +108,9 @@ export default function Cart() {
                           <select
                             className="form-select"
                             aria-label="Default select example"
+                            defaultValue="default"
                           >
-                            <option selected>
+                            <option value="default">
                               Choose your finance option{" "}
                             </option>
                             <option value="1">One</option>
