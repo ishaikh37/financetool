@@ -33,15 +33,15 @@ export default function Widget(props) {
     };
   }, [props?.showComponent]);
 
-  // const closeModal = () => {
-  //   // Close your modal logic goes here
+  const closeModal = () => {
+    // Close your modal logic goes here
 
-  //   // Send a message to the parent document
-  //   window.parent.postMessage("closeIframe", "*");
-  // };
+    // Send a message to the parent document
+    window.parent.postMessage("closeIframe", "*");
+  };
 
   const handleClose = () => {
-    // closeModal();
+    closeModal();
     props.toggleComponent();
   };
   // const handleClose = () => {

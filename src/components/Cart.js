@@ -15,15 +15,15 @@ export default function Cart() {
   const handleClose = () => setShow(false);
   //   const handleShow = () => setShow(true);
 
-  // const closeModal = () => {
-  //   // Close your modal logic goes here
+  const closeModal = () => {
+    // Close your modal logic goes here
 
-  //   // Send a message to the parent document
-  //   window.parent.postMessage("closeIframe", "*");
-  // };
+    // Send a message to the parent document
+    window.parent.postMessage("closeIframe", "*");
+  };
 
   const toggleComponent = () => {
-    // closeModal();
+    closeModal();
     console.log("yesss");
     setShowComponent(!showComponent);
     // setShow(false)
