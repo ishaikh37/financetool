@@ -34,18 +34,21 @@ export default function Widget(props) {
     };
   }, [show]);
 
-  const closeModal = () => {
-    // Close your modal logic goes here
+  // const closeModal = () => {
+  //   // Close your modal logic goes here
 
-    // Send a message to the parent document
-    window.parent.postMessage("closeIframe", "*");
-  };
+  //   // Send a message to the parent document
+  //   window.parent.postMessage("closeIframe", "*");
+  // };
 
-  // const handleClose = () => props.toggleComponent();
   const handleClose = () => {
-    closeModal();
-    setShow(false);
+    // closeModal();
+    props.toggleComponent();
   };
+  // const handleClose = () => {
+  //   closeModal();
+  //   setShow(false);
+  // };
 
   // const [showModal, setShowModal] = useState(true)
   // const handleShow = () => setShow(true);
