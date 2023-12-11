@@ -17,7 +17,7 @@ export default function Cart() {
 
   const closeModal = () => {
     // Close your modal logic goes here
-
+    setShow(false);
     // Send a message to the parent document
     window.parent.postMessage("closeIframe", "*");
   };
