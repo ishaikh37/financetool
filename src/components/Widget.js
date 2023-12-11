@@ -11,6 +11,7 @@ import "../components/Cart";
 // import Cart from '../components/Cart';
 export default function Widget(props) {
   console.log("props", props);
+  const [show, setShow] = useState(true);
   const [cartItems, setCartItems] = useState([
     { id: 1, productName: "Selling Plans Ski Wax", quantity: 2, price: 100 },
     { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
@@ -40,14 +41,14 @@ export default function Widget(props) {
     window.parent.postMessage("closeIframe", "*");
   };
 
-  const handleClose = () => {
-    props.toggleComponent();
-    closeModal();
-  };
   // const handleClose = () => {
+  //   props.toggleComponent();
   //   closeModal();
-  //   setShow(false);
   // };
+  const handleClose = () => {
+    closeModal();
+    setShow(false);
+  };
 
   // const [showModal, setShowModal] = useState(true)
   // const handleShow = () => setShow(true);
@@ -75,7 +76,7 @@ export default function Widget(props) {
 
   return (
     <>
-      {props?.showComponent ? (
+      {show ? (
         <Modal
           style={{}}
           show={props?.showComponent}

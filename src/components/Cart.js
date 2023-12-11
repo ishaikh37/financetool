@@ -23,9 +23,8 @@ export default function Cart() {
   };
 
   const toggleComponent = () => {
-    console.log("yesss");
-    setShowComponent(!showComponent);
     closeModal();
+    setShowComponent(!showComponent);
     // setShow(false)
   };
 
