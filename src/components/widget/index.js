@@ -1,29 +1,22 @@
-import React from "react";
-import "../components/widget.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import logo from "../images/logo-image.svg";
-import info from "../images/info-icon.svg";
 import { ReactSVG } from "react-svg";
 import { useState } from "react";
-import "../components/Cart";
-// import Cart from '../components/Cart';
-export default function Widget(props) {
+
+import logo from "../../asset/svg/logo-image.svg";
+import info from "../../asset/svg/info-icon.svg";
+import "./widget.css";
+
+export default function Widget({ toggleModal }) {
   const [cartItems, setCartItems] = useState([
     { id: 1, productName: "Selling Plans Ski Wax", quantity: 2, price: 100 },
     { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
   ]);
 
   const handleQuantityChange = (index, newQuantity) => {
-    // Create a copy of the cartItems array
     const updatedCartItems = [...cartItems];
-
-    // Update the quantity for the specific item
     updatedCartItems[index] = {
       ...updatedCartItems[index],
       quantity: newQuantity,
     };
-
-    // Update the state with the new cartItems array
     setCartItems(updatedCartItems);
   };
 
@@ -41,10 +34,6 @@ export default function Widget(props) {
           <div className="widget-box subtotal-cart">
             <div className="accordion-item">
               <div className="widget-content">
-                {/* <div className="expand-svg">
-                        <img src={expand} alt="expand-svg" />
-                      </div> */}
-                {/* <i className="fa-solid fa-xmark"></i> */}
                 <div className="left-content">
                   <img src={logo} alt="logo" />
                 </div>
@@ -96,49 +85,6 @@ export default function Widget(props) {
                         </div>
                       </div>
                     ))}
-                    {/* <div className="product-table">
-                            <div className="col-6">
-                              <p>
-                                <i className="fa-solid fa-trash"></i>Product
-                                Name
-                              </p>
-                            </div>
-                            <div className="col-3">
-                              <div className="input-group">
-                                <input
-                                  type="number"
-                                  className="form-control text-center"
-                                  id="quantity"
-                                  min="1"
-                                  defaultValue={1}
-                                />
-                              </div>
-                            </div>
-                            <div className="col-3 price">
-                              <span className="bold-price">£400</span>
-                            </div>
-                          </div>
-                          <div className="product-table">
-                            <div className="col-6">
-                              <p>
-                                <i className="fa-solid fa-trash"></i>Product
-                                Name
-                              </p>
-                            </div>
-                            <div className="col-3">
-                              <div className="input-group">
-                                <input
-                                  type="number"
-                                  className="form-control text-center"
-                                  min="1"
-                                  defaultValue={1}
-                                />
-                              </div>
-                            </div>
-                            <div className="col-3 price">
-                              <span className="bold-price">£400</span>
-                            </div>
-                          </div> */}
                     <div className="subtotal">
                       <div className="row">
                         <div className="col-6">Subtotal</div>
@@ -150,16 +96,7 @@ export default function Widget(props) {
                       </div>
                     </div>
                   </div>
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    defaultValue="default"
-                  >
-                    <option value="default">Choose Your shopping option</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+
                   <div className="coupon-form">
                     <form>
                       <input
@@ -167,6 +104,18 @@ export default function Widget(props) {
                         className="code form-control"
                         placeholder="Enter coupon code"
                       />
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        defaultValue="default"
+                      >
+                        <option value="default">
+                          Choose Your shopping option
+                        </option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
                       <div className="row mb-3">
                         <div className="col-md-6">
                           <input
@@ -201,23 +150,29 @@ export default function Widget(props) {
                       </div>
                       <input
                         type="number"
-                        className="form-control"
+                        className="form-control custom-space"
                         placeholder="Phone Number"
                       />
                       <input
                         type="email"
-                        className="form-control"
+                        className="form-control custom-space"
                         placeholder="Email address"
                       />
-
                       <button type="button" className="btn btn-primary">
                         Apply Now
                       </button>
+                      <button
+                        onClick={() => toggleModal("cart")}
+                        type="button"
+                        className="btn btn-primary"
+                      >
+                        Back
+                      </button>
                     </form>
                   </div>
-                  <p>
+                  <p className="bottom-content">
                     You will be redirected to our lenders portal. Once a
-                    decision has been made you will return to this site.,
+                    decision has been made you will return to this site.
                   </p>
                 </div>
               </div>

@@ -1,19 +1,11 @@
-import "./App.css";
-// import Cart from "./components/Cart";
-import "bootstrap/dist/css/bootstrap.min.css";
 import MainContainer from "./components/MainContainer";
 
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 function App() {
-  return (
-    <>
-      <MainContainer />
-    </>
-
-    // <div className="App">
-
-    // {/* <Widget /> */}
-    // {/* </div> */}
-  );
+  return <MainContainer />;
 }
 
 export default App;

@@ -1,9 +1,10 @@
 import React, { useEffect, useReducer } from "react";
 import Modal from "react-bootstrap/Modal";
-import Cart from "./Cart";
-import Widget from "./Widget";
-import "./cart.css";
-import "./widget.css";
+import Cart from "./cart/index";
+import Widget from "./widget/index";
+
+import "./cart/cart.css";
+import "./widget/widget.css";
 
 const MainContainer = () => {
   const [state, setState] = useReducer(
@@ -23,31 +24,27 @@ const MainContainer = () => {
       }
     };
 
-    handleBodyClass(); // Set initial class
+    handleBodyClass();
 
     return () => {
-      // Clean up and remove the class when the component unmounts
       document.body.classList.remove("modal-open-after");
     };
   }, [state.activeModal]);
 
   const clearModal = () => {
-    // Close your modal logic goes here
-    // setShow(false);
-    // Send a message to the parent document
     window.parent.postMessage("closeIframe", "*");
   };
 
-  const toggleModal = () => {
+  const toggleModal = (type) => {
     setState({
-      activeModal: "widget",
+      activeModal: type,
     });
   };
 
   const renderModal = () => {
     const modalToRender = {
       cart: <Cart toggleModal={toggleModal} />,
-      widget: <Widget />,
+      widget: <Widget toggleModal={toggleModal} />,
     };
     return modalToRender[state.activeModal];
   };

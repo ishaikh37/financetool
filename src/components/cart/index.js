@@ -1,9 +1,9 @@
-import React from "react";
-import "../components/cart.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import logo from "../images/logo-image.svg";
-import info from "../images/info-icon.svg";
 import { ReactSVG } from "react-svg";
+
+import logo from "../../asset/svg/logo-image.svg";
+import info from "../../asset/svg/info-icon.svg";
+import "./cart.css";
+
 export default function Cart({ toggleModal }) {
   return (
     <>
@@ -11,10 +11,6 @@ export default function Cart({ toggleModal }) {
         <div className="widget-box expanded-widget">
           <div className="accordion-item">
             <div className="widget-content">
-              {/* <div className="expand-svg">
-                        <img src={expand} alt="expand-svg" />
-                      </div> */}
-              {/* <i className="fa-solid fa-xmark"></i> */}
               <div className="left-content">
                 <img src={logo} alt="logo" />
               </div>
@@ -86,8 +82,10 @@ export default function Cart({ toggleModal }) {
                       </div>
                     </div>
                   </div>
-                  <button onClick={() => toggleModal()}>Add To Finance</button>
-                  <p>
+                  <button onClick={() => toggleModal("widget")}>
+                    Add To Finance
+                  </button>
+                  <p className="bottom-content">
                     Values are for illustrative purposes only and the final
                     figure may be different
                   </p>

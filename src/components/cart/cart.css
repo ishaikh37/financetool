@@ -1,13 +1,14 @@
  .main-cart-container .modal-dialog {
     max-width: 395px;
     background-color: #ffffff;
-    padding:20px 20px;
+    padding:20px;
     box-sizing: border-box;
     border-radius: 16px;
     box-shadow: 0px 1px 12px rgba(3,3,3,0.08);
     top: 50%;
     margin: 0 auto;
     transform: translateY(-50%) !important;
+    transition: none !important;
 }
 .main-cart-modal .modal-dialog .modal-content{
     border:none;
@@ -53,20 +54,21 @@
 .expanded-widget .accordion-item .widget-content{
     position: relative;
 }
- .widget-box .accordion-item .widget-content .expand-svg{
+ /* .widget-box .accordion-item .widget-content .expand-svg{
     position: absolute;
     right: -5px;
     bottom: 6px;
-}
+} */
 .main-cart-modal .modal-dialog .modal-header button{
     position: absolute;
-    right: 5px;
+    top: 5px;
+    right: -3px;
     width:6px;
     height: 6px;
-   font-size: 10px;
+   font-size: 12px;
 }
-.cart-modal .widget-box .accordion-item #collapseOne .accordion-body .details-sub-div{
-    margin:0 10px;
+.main-cart-modal .modal-dialog .modal-header button:focus{
+    box-shadow: none;
 }
 /* accordion body */
 .cart-modal .widget-box .accordion-item #collapseOne .accordion-body h5{
@@ -84,7 +86,6 @@
     border-radius: 10px;
     overflow: visible;
     background-color: rgba(193, 193, 193, 1);
-    margin-left:10px;
 }
 .cart-modal .widget-box .accordion-item #collapseOne .accordion-body .progress  .progress-bar{position: relative;overflow:visible;background-color:#3164f4}
 .cart-modal .widget-box .accordion-item #collapseOne .accordion-body .progress  .progress-bar::before{
@@ -102,12 +103,12 @@
     margin: 70px 20px 0 0;
 }
 .cart-modal   .accordion-item #collapseOne .accordion-body .form-select{
-    margin: 20px 0;
+    margin: 25px 0;
     cursor: pointer;
-    border: 0;
+    border: 1px solid lightgray;
     box-sizing: border-box;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(3,3,3,0.1);
+    /* box-shadow: 0px 0px 10px rgba(3,3,3,0.1); */
     background-color: #ffffff;
     color: #030303;
     font-size: 14px;
@@ -116,7 +117,9 @@
     padding:10px;
 
 }
-
+.cart-modal   .accordion-item #collapseOne .accordion-body .form-select:focus{
+   box-shadow: none !important;
+}
 
 .cart-modal .widget-box .accordion-item #collapseOne .accordion-body .custom-progress .progress-bar .progress-bar-percentage{
     position: absolute;
@@ -127,7 +130,7 @@
     border-radius: 4px;
     color: #030303;
     font-size: 14px;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     line-height: 16px;
     padding:5px;
 }
@@ -169,7 +172,7 @@
 }
 .cart-modal .widget-box .accordion-item #collapseOne .accordion-body button{
     width:100%;
-    margin:10px 0;
+    margin-bottom: 10px;
     border: 0;
     box-sizing: border-box;
     border-radius: 10px;
@@ -190,7 +193,11 @@
     margin-top:10px;
     text-align: left;
     }
-
+    .cart-modal .widget-box .accordion-item #collapseOne .accordion-body .your-cart .product-table p {
+        font-size: 14px;
+        font-family: "Manrope";
+        font-weight: 400;
+    }
 .modal-open-after {
     background: transparent;
 }
@@ -200,10 +207,19 @@
     margin: 0px auto;
     transform: translateY(-50%);
 }
-
-@media  (min-height: 700px) {
-    .main-cart-modal .main-cart-container .modal-dialog {
-        top: -50%;
-        transform: translateY(50%);
+.bottom-content{
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 428px) {
+    .main-cart-container .modal-dialog{
+        margin: 10px;
+    }
+        .cart-modal .widget-box .accordion-item #collapseOne .accordion-body h5{
+            text-align: center;
+        }
+}
+@media screen and (max-width: 370px){
+    .cart-modal .widget-box .accordion-item #collapseOne .accordion-body .your-cart .product-table p {
+        font-size: 11px;
     }
 }
