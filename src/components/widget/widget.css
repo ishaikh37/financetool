@@ -1,7 +1,7 @@
 .main-widget-container .modal-dialog {
     max-width: 395px;
     background-color: #ffffff;
-    padding: 20px 20px;
+    padding: 25px;
     box-sizing: border-box;
     border-radius: 16px;
     box-shadow: 0px 1px 12px rgba(3, 3, 3, 0.08);
@@ -84,7 +84,11 @@
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     outline: none;
-
+}
+.widget-container .accordion-item #collapseOne .accordion-body .form-select option {
+    color: #030303;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .widget-container .accordion-item #collapseOne .accordion-body .form-select:focus{
@@ -93,7 +97,7 @@
 .main-widget-container .modal-dialog .modal-header button{
     position: absolute;
     top: 5px;
-    right: -3px;
+    right: -10px;
     width:6px;
     height: 6px;
    font-size: 12px;
@@ -117,7 +121,10 @@
     font-family: 'Roboto', sans-serif;
     outline: none;
 }
-
+.main-widget-container .widget-box .accordion-item #collapseOne .accordion-body .back-button{
+    background-color: white;
+    color: black;
+}
 /* subtotal-cart */
 .subtotal {
     margin: 10px 0px 20px;
@@ -204,7 +211,9 @@
     border: 0px;
     /* margin-bottom: 10px; */
 }
-
+.main-widget-container{
+    padding-left: 0;
+}
 .subtotal-cart .accordion-item .your-cart .subtotal .price {
     color: #000000;
     font-size: 18px;
@@ -250,7 +259,7 @@
         box-shadow: 0 1px 12px #03030314;
         box-sizing: border-box;
         max-width: 395px;
-        padding: 20px;
+        padding: 25px;
         margin-top: 10%;
         margin-bottom: 10%;
         transition: none !important;

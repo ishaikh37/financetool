@@ -9,7 +9,7 @@ export default function Widget({ toggleModal }) {
   const [cartItems, setCartItems] = useState([
     { id: 1, productName: "Selling Plans Ski Wax", quantity: 2, price: 100 },
     { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
-  ]);
+  ])
 
   const handleQuantityChange = (index, newQuantity) => {
     const updatedCartItems = [...cartItems];
@@ -164,7 +164,7 @@ export default function Widget({ toggleModal }) {
                       <button
                         onClick={() => toggleModal("cart")}
                         type="button"
-                        className="btn btn-primary"
+                        className="btn back-button"
                       >
                         Back
                       </button>
