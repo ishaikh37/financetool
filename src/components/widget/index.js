@@ -1,16 +1,22 @@
 import { ReactSVG } from "react-svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import logo from "../../asset/svg/logo-image.svg";
 import info from "../../asset/svg/info-icon.svg";
 import "./widget.css";
-
+import axios from "axios";
 export default function Widget({ toggleModal }) {
   const [cartItems, setCartItems] = useState([
     { id: 1, productName: "Selling Plans Ski Wax", quantity: 2, price: 100 },
     { id: 2, productName: "Gift Card", quantity: 1, price: 250 },
-  ])
-
+  ]);
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos/1")
+      .then((res) => setData(res.data));
+  }, []);
+  console.log("data:", data);
   const handleQuantityChange = (index, newQuantity) => {
     const updatedCartItems = [...cartItems];
     updatedCartItems[index] = {
@@ -164,7 +170,7 @@ export default function Widget({ toggleModal }) {
                       <button
                         onClick={() => toggleModal("cart")}
                         type="button"
-                        className="btn back-button"
+                        className="btn back-button btn-primary"
                       >
                         Back
                       </button>

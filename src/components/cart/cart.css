@@ -10,6 +10,18 @@
     transform: translateY(-50%) !important;
     transition: none !important;
 }
+.spinner-container{
+    min-height: 400px;
+    position: relative;
+}
+.spinner-border{
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .main-cart-modal .modal-dialog .modal-content{
     border:none;
 }
@@ -57,10 +69,11 @@
 .main-cart-modal .modal-dialog .modal-header button{
     position: absolute;
     top: 5px;
-    right: -10px;
+    right: -5px;
     width:6px;
     height: 6px;
    font-size: 12px;
+   margin-top:-20px;
 }
 .main-cart-modal .modal-dialog .modal-header button:focus{
     box-shadow: none;
@@ -100,10 +113,11 @@
     padding: 5px;
     white-space: nowrap;  
     z-index:'1';
+    background: #ffffff;
   }
 .cart-modal .widget-box .accordion-item #collapseOne .accordion-body .custom-progress{
     position: relative;
-    margin: 60px 20px 0 0;
+    margin: 60px 0px 0 0;
 }
 .cart-modal   .accordion-item #collapseOne .accordion-body .form-select{
     margin: 25px 0;

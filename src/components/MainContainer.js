@@ -60,6 +60,7 @@ const MainContainer = () => {
     <Modal
       show={state.showModal}
       onHide={closeModal}
+      backdrop="static"
       className={`main-cart-modal main-${state.activeModal}-container`}
     >
       <Modal.Header closeButton></Modal.Header>

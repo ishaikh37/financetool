@@ -1,3 +1,6 @@
+.main-widget-container{
+    padding-left: 0;
+}
 .main-widget-container .modal-dialog {
     max-width: 395px;
     background-color: #ffffff;
@@ -9,8 +12,20 @@
     top: 50%;
     margin: 0 auto;
     transform: translateY(-50%) !important;
+    min-height:400px;
 }
-
+.spinner-container{
+    min-height: 400px;
+    position: relative;
+}
+.spinner-border{
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .widget-section {
     max-width: 395px;
 }
@@ -97,10 +112,11 @@
 .main-widget-container .modal-dialog .modal-header button{
     position: absolute;
     top: 5px;
-    right: -10px;
+    right: -5px;
     width:6px;
     height: 6px;
    font-size: 12px;
+   margin-top:-20px;
 }
 .main-widget-container .modal-dialog .modal-header button:focus{
     box-shadow: none;
@@ -124,6 +140,9 @@
 .main-widget-container .widget-box .accordion-item #collapseOne .accordion-body .back-button{
     background-color: white;
     color: black;
+    border: 1px solid lightgray;
+    box-shadow: none;
+    padding:7.2px;
 }
 /* subtotal-cart */
 .subtotal {
