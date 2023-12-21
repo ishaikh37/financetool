@@ -10,7 +10,7 @@ export default function Cart({ toggleModal }) {
   const [percentage, setPercentage] = useState(0);
   const [lenderData, setLenderData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [calculateLoader, setCalculateLoader] = useState(false);
+  // const [calculateLoader, setCalculateLoader] = useState(false);
   const [data, setData] = useState([]);
   const [selectedFinanceDetails, setSelectedFinanceDetails] = useState(null);
 
@@ -62,7 +62,7 @@ export default function Cart({ toggleModal }) {
   };
 
   const changeFinanceOption = (e) => {
-    setCalculateLoader(true);
+    // setCalculateLoader(true);
     const decimalPercentage = parseFloat(percentage) / 100;
     const deposit = 1000 * decimalPercentage;
     console.log("deposit", deposit);
@@ -77,7 +77,7 @@ export default function Cart({ toggleModal }) {
         requestBody
       )
       .then((res) => {
-        setCalculateLoader(false);
+        // setCalculateLoader(false);
         setSelectedFinanceDetails(res.data.loanDetails);
       });
   };
